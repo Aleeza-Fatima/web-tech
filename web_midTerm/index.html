@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Cup Clone</title>
+
+    <link rel="stylesheet" href="styling.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="order-now-tab">ORDER NOW</div>
+
+  <header>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="web proj img/logo.jpg" alt="Logo">
+            </div>
+
+            <ul class="menu" id="nav-menu">
+                <li>ABOUT</li>
+                <li>MENU <i class="fa-solid fa-caret-down"></i></li>
+                <li>FRANCHISING</li>
+                <li>STORE LOCATOR</li>
+                <li>CAREERS</li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="desktop-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<footer class="site-footer">
+    </footer>
+
+  <!---- <header>
+        <div class="navbar">
+            <div class="left-section">
+                <div class="logo">
+                    <img src="/web proj img/logo.jpg" alt="Logo">
+                </div>
+
+                <ul class="menu">
+                    <li>ABOUT</li>
+                    <li>MENU <i class="fa-solid fa-caret-down"></i></li>
+                    <li>FRANCHISING</li>
+                    <li>STORE LOCATOR</li>
+                    <li>CAREERS</li>
+                </ul>
+            </div>
+
+            <div class="icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+    </header> -->
+
+    <main class="main-content">
+    <div class="hero-slider">
+        <div class="slider-container">
+            <img src="web proj img/banner-1.jpg" alt="Special Days 1">
+            <img src="web proj img/banner-02.jpg" alt="Special Days 2">
+            <img src="web proj img/banner-03.jpg" alt="Special Days 3">
+            <img src="web proj img/Banner_04.png" alt="Special Days 4">
+            <img src="web proj img/banner-05.jpeg" alt="Special Days 5">
+            <img src="web proj img/banner-06.jpg" alt="Special Days 6">
+        </div>
+       <section class="hot-selling-section">
+    <h2 class="section-title">HOT SELLING</h2>
+    
+    <div class="hot-selling-wrapper">
+        <a href="#item1" class="main-side-arrow left-arrow">❮</a>
+        <a href="#item4" class="main-side-arrow right-arrow">❯</a>
+
+        <div class="hot-selling-container">
+            <div class="product-card" id="item1">
+                <img src="web proj img/Hot-Pizza.jpg" alt="Special Pizza">
+                <h3>SPECIAL PIZZA</h3>
+            </div>
+
+            <div class="product-card" id="item2">
+                <img src="web proj img/Teryaki-Sandwich.jpg" alt="Teriyaki Sandwich">
+                <h3>TERIYAKI SANDWICH</h3>
+            </div>
+
+            <div class="product-card" id="item3">
+                <img src="/web proj img/Club-Sandwich.jpg" alt="Club Sandwich">
+                <h3>CLUB SANDWICH</h3>
+            </div>
+
+            <div class="product-card" id="item4">
+                <img src="/web proj img/Hot-Chocolate.jpg" alt="Cookies n Cream">
+                <h3>COOKIES N CREAM</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-deals-section">
+    <h2 class="section-title" style="color: #000; text-align: center; padding-top: 40px;">FEATURED DEALS</h2>
+    <div id="product-container" class="insta-grid"></div> 
+</section>
+
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-body">
+            </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<section class="main-menu-section">
+    <h2 class="menu-title">MAIN MENU</h2>
+    
+    <div class="menu-wrapper">
+        <div class="menu-container">
+            <div class="menu-card" id="menu-item1">
+                <div class="menu-img-box">
+                    <img src="/web proj img/Hot-Beverages.jpg" alt="Beverages">
+                    <a href="#menu-item3" class="corner-arrow">❮</a>
+                </div>
+                <h3>HOT & COLD BEVERAGES</h3>
+            </div>
+
+            <div class="menu-card" id="menu-item2">
+                <div class="menu-img-box">
+                    <img src="/web proj img/Main-Menu-Live-Chicken.jpg" alt="Live Kitchen">
+                </div>
+                <h3>LIVE KITCHEN</h3>
+            </div>
+
+            <div class="menu-card" id="menu-item3">
+                <div class="menu-img-box">
+                    <img src="/web proj img/bakery-Items.jpg" alt="Bakery">
+                    <a href="#menu-item1" class="corner-arrow right-corner">❯</a>
+                </div>
+                <h3>BAKERY ITEMS</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sustainability-section">
+    <a href="#" class="learn-btn-overlay">LEARN MORE</a>
+</section>
+
+<section class="achievements-section">
+    <div class="achievements-header">
+        <h2>Second Cup Achievements</h2>
+    </div>
+    
+    <div class="achievements-container">
+        <div class="stat-box white-box">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">OPERATING COUNTRIES</span>
+        </div>
+
+        <div class="stat-box red-box">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">BRANCHES IN PAKISTAN</span>
+        </div>
+
+        <div class="stat-box white-box">
+            <span class="stat-number">700+</span>
+            <span class="stat-label">BRANCHES WORLD WIDE</span>
+        </div>
+    </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<section class="franchise-section">
+    <div class="franchise-content-wrapper">
+        
+        <div class="franchise-text-top">
+            <h1 class="franchise-title">WANT TO BE SECOND CUP <br> <span>FRANCHISE</span> PARTNER?</h1>
+            <p class="franchise-desc">Make your <em>dream</em> of owning a <em>coffee</em> franchise come true with us! <br> Currently we are operating in 15+ cities</p>
+        </div>
+
+        <div class="franchise-visuals">
+            <div class="map-container">
+                <img src="/web proj img/map.png" alt="Pakistan Map">
+            </div>
+            <div class="logo-container">
+                <div class="white-logo-box">
+                    <img src="/web proj img/logo2.jpg" alt="Second Cup Logo">
+                </div>
+            </div>
+        </div>
+
+        <div class="franchise-footer">
+            <a href="#" class="franchise-btn">GET YOUR OWN FRANCHISE...</a>
+        </div>
+        
+    </div>
+</section>
+
+<section class="newsletter-red-bar">
+    <div class="newsletter-flex">
+        <h2 class="newsletter-text">Join Our Newsletter</h2>
+        <form class="join-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">JOIN</button>
+        </form>
+    </div>
+</section>
+
+<section class="insta-feed-section">
+    <div class="insta-header">
+        <a href="https://www.instagram.com/secondcuppakistan/" target="_blank">
+            <i class="fab fa-instagram"></i> 
+            <span>secondcuppakistan</span>
+        </a>
+    </div>
+
+    <div class="insta-grid">
+        <div class="insta-item"><img src="/web proj img/num 1.webp" alt="Post 1"></div>
+        <div class="insta-item"><img src="/web proj img/2.webp" alt="Post 2"></div>
+        <div class="insta-item"><img src="/web proj img/3.webp" alt="Post 3"></div>
+        <div class="insta-item"><img src="/web proj img/4.webp" alt="Post 4"></div>
+        
+        <div class="insta-item"><img src="/web proj img/5.webp" alt="Post 5"></div>
+        <div class="insta-item"><img src="/web proj img/6.webp" alt="Post 6"></div>
+        <div class="insta-item"><img src="/web proj img/7.webp" alt="Post 7"></div>
+        <div class="insta-item"><img src="/web proj img/8.webp" alt="Post 8"></div>
+
+        <div class="insta-item"><img src="/web proj img/9.webp" alt="Post 9"></div>
+        <div class="insta-item"><img src="/web proj img/10.webp" alt="Post 10"></div>
+        <div class="insta-item"><img src="/web proj img/11.webp" alt="Post 11"></div>
+        <div class="insta-item"><img src="/web proj img/12.webp" alt="Post 12"></div>
+
+        <div class="insta-item"><img src="/web proj img/13.webp" alt="Post 13"></div>
+        <div class="insta-item"><img src="/web proj img/14.webp" alt="Post 14"></div>
+        <div class="insta-item"><img src="/web proj img/15.webp" alt="Post 15"></div>
+        <div class="insta-item"><img src="/web proj img/16.webp" alt="Post 16"></div>
+
+        <div class="insta-item"><img src="/web proj img/17.webp" alt="Post 17"></div>
+        <div class="insta-item"><img src="/web proj img/18.webp" alt="Post 18"></div>
+        <div class="insta-item"><img src="/web proj img/19.webp" alt="Post 19"></div>
+        <div class="insta-item"><img src="/web proj img/20.webp" alt="Post 20"></div>
+    </div>
+</section>
+<section class="insta-buttons-section">
+    <div class="insta-button-container">
+        <a href="#" class="insta-outline-btn">LOAD MORE</a>
+        <a href="https://www.instagram.com/secondcuppakistan/" target="_blank" class="insta-outline-btn">FOLLOW ON INSTAGRAM</a>
+    </div>
+</section>
+
+        </div>
+</main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            
+            <p class="app-text">Download the App now</p>
+            
+            <div class="app-buttons">
+                <a href="#"><img src="/web proj img/google-play.png" alt="Get it on Google Play"></a>
+                <a href="#"><img src="/web proj img/apple-store-btn.png" alt="Download on the App Store"></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-links-left">
+                <a href="#">SUSTAINABILITY</a> | <a href="#">NEWS</a>
+            </div>
+            
+            <div class="copyright">
+                COPYRIGHT: THE SECOND CUP COFFEE COMPANY INC. 2022
+            </div>
+
+            <div class="footer-links-right">
+                <a href="#">CONTACT US</a> | <a href="#">PRIVACY POLICY</a>
+            </div>
+
+            <div class="developer-tag">
+                Developed by Dopment Digital
+            </div>
+        </div>
+
+        <div class="order-now-tab">ORDER NOW</div>
+    </footer>
+
+</body>
+</html>

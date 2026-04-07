@@ -1,0 +1,900 @@
+/* Reset and Sticky Footer Logic */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* This expands to fill the middle space, pushing the footer down */
+.main-content {
+    flex: 1 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #e5e5e5;
+    flex-shrink: 0;
+}
+
+/* LEFT SIDE (logo + menu) */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.icons i {
+    cursor: pointer;
+}
+
+/* Footer Container */
+.site-footer {
+    flex-shrink: 0; /* Prevents footer from squishing */
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px 20px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff3333;
+}
+
+.app-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.app-buttons img {
+    height: 45px;
+    margin: 5px 10px;
+}
+
+/* Bottom Links */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.footer-bottom a {
+    color: #ff3333; 
+    text-decoration: none;
+}
+
+.copyright {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.developer-tag {
+    color: #ff3333;
+    font-size: 11px;
+}
+
+/* Floating Red Tab */
+.order-now-tab {
+    background-color: #d9534f;
+    color: white;
+    padding: 15px 10px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness (Max-width 768px) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .left-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .order-now-tab {
+        display: none;
+    }
+}
+
+/* Hero Slider Styles */
+.hero-slider {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.slider-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Makes images snap into place */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.slider-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.slider-container img {
+    width: 100%; /* Each image takes full width of the screen */
+    flex-shrink: 0; /* Prevents images from squishing */
+    scroll-snap-align: start; /* Snap point */
+    object-fit: cover; /* Keeps image aspect ratio clean */
+    display: block;
+}
+
+/* Media Query Adjustments */
+@media screen and (max-width: 768px) {
+    .slider-container img {
+        height: 300px; /* Adjust height for mobile so it's not too tall */
+    }
+}
+
+
+/* Hot Selling Section Styling */
+.hot-selling-section {
+    background-color: #000;
+    padding: 60px 0;
+    text-align: center;
+    position: relative; /* Needed for absolute arrows */
+}
+
+.section-title {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Wrapper to hold the container and arrows */
+.hot-selling-wrapper {
+    position: relative;
+    width: 90%; /* Leaves 5% space on each side for arrows */
+    margin: 0 auto;
+}
+
+/* The horizontal slider */
+.hot-selling-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+}
+
+/* Hide the scrollbar */
+.hot-selling-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Product Cards */
+.product-card {
+    flex: 0 0 calc(33.33% - 20px); /* Shows 3 items on desktop */
+    scroll-snap-align: start;
+}
+
+.product-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-card h3 {
+    color: #fff;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* THE SIDE ARROWS */
+.main-side-arrow {
+    position: absolute;
+    top: 45%; /* Centered vertically relative to the image */
+    transform: translateY(-50%);
+    font-size: 45px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.left-arrow {
+    left: -50px; /* Positioned outside the slider to the left */
+}
+
+.right-arrow {
+    right: -50px; /* Positioned outside the slider to the right */
+}
+
+.main-side-arrow:hover {
+    color: #ff3333; /* Highlights red on hover */
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+    .hot-selling-wrapper {
+        width: 80%; /* Give arrows more room on small screens */
+    }
+
+    .product-card {
+        flex: 0 0 100%; /* Show 1 item at a time */
+    }
+
+    .product-card img {
+        height: 250px; /* Shorter images for mobile */
+    }
+
+    .main-side-arrow {
+        font-size: 30px;
+    }
+
+    .left-arrow { left: -30px; }
+    .right-arrow { right: -30px; }
+}
+
+/* Main Menu Section */
+.main-menu-section {
+    background-color: #fff; /* White background for this section */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.menu-title {
+    color: #000;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.menu-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 30px;
+}
+
+/* Hide scrollbar */
+.menu-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Menu Card */
+.menu-card {
+    flex: 0 0 calc(33.33% - 20px);
+    scroll-snap-align: start;
+}
+
+.menu-img-box {
+    position: relative; /* Essential for placing the arrow inside */
+}
+
+.menu-img-box img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-card h3 {
+    color: #000;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* THE CORNER ARROW */
+.corner-arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2); /* Subtle dark overlay */
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20px 10px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.right-corner {
+    left: auto;
+    right: 0;
+}
+
+.corner-arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* MOBILE VIEW (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .menu-card {
+        flex: 0 0 100%; /* Show one item at a time */
+    }
+
+    .menu-img-box img {
+        height: 300px;
+    }
+}
+.sustainability-section {
+    /* 1. Set the forest image as a background */
+    background-image: url('/web proj img/Sustain-banner.jpg'); 
+    
+    /* 2. Force it to be full-width and 80% of the screen height */
+    width: 100%;
+    height: 80vh; 
+    
+    /* 3. Make the image cover the entire section edge-to-edge */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* 4. Position the button inside the image */
+    display: flex;
+    align-items: flex-end; /* Pushes the button toward the bottom half */
+    justify-content: center;
+    padding-bottom: 100px; /* Moves the button up slightly to stay on the text */
+    
+    margin: 0;
+}
+
+/* Style the button to match the Second Cup red */
+.learn-btn-overlay {
+    background-color: #d9534f; 
+    color: white;
+    padding: 15px 45px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.learn-btn-overlay:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+
+/* Achievements Section Wrapper */
+.achievements-section {
+    width: 100%;
+    background-color: #000; /* Black background for the top header part */
+    text-align: center;
+}
+
+.achievements-header h2 {
+    color: #fff;
+    font-size: 28px;
+    padding: 40px 0;
+    margin: 0;
+    font-weight: bold;
+    text-transform: none; /* Matches the "Second Cup Achievements" casing */
+}
+
+/* Container for the 3 boxes */
+.achievements-container {
+    display: flex;
+    width: 100%;
+    height: 350px; /* Fixed height for the boxes */
+}
+
+/* Individual Stat Boxes */
+.stat-box {
+    flex: 1; /* This makes each box exactly 1/3 of the screen width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* White Boxes (1st and 3rd) */
+.white-box {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Red Box (Middle) */
+.red-box {
+    background-color: #d9534f; /* Second Cup Red */
+    color: #fff;
+}
+
+/* Styling the Numbers (30+, 50+, 700+) */
+.stat-number {
+    font-size: 80px; /* Large bold numbers */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling the Labels */
+.stat-label {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+    .achievements-container {
+        flex-direction: column; /* Stack boxes on top of each other on phones */
+        height: auto;
+    }
+    
+    .stat-box {
+        padding: 40px 0;
+    }
+    
+    .stat-number {
+        font-size: 60px;
+    }
+}
+/* 1. The Big Gap between Achievements and Franchise */
+.section-spacer {
+    height: 150px; /* Adjust this to make the gap bigger or smaller */
+    background-color: #fff; 
+}
+
+.franchise-section {
+    /* 2. Background Image with Fixed Scroll (Parallax) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url('/web proj img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* This makes the image stay still while content moves */
+    background-attachment: fixed; 
+    
+    width: 100%;
+    min-height: 120vh; /* Made it extra tall so you have to scroll */
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.franchise-content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between text, map, and button */
+}
+
+/* Text Section */
+.franchise-text-top {
+    text-align: left;
+    color: white;
+}
+
+.franchise-title {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.franchise-title span { color: #d9534f; }
+
+.franchise-desc {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.franchise-desc em { color: #d9534f; font-style: italic; }
+
+/* Visuals Section (Map & Logo) */
+.franchise-visuals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.map-container img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.white-logo-box {
+    background-color: white;
+    padding: 40px;
+    border: 10px solid #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.white-logo-box img {
+    width: 250px;
+}
+
+/* 3. Button at the very bottom */
+.franchise-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.franchise-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 18px 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.franchise-btn:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+/* The Red Newsletter Bar */
+.newsletter-red-bar {
+    background-color: #d9534f; /* The Second Cup Red */
+    padding: 30px 5%;
+    width: 100%;
+}
+
+.newsletter-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between text and form */
+}
+
+.newsletter-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: none; /* Keeps it as "Join Our Newsletter" */
+}
+
+.join-form {
+    display: flex;
+    flex: 0 1 500px; /* Limits the width of the input area */
+}
+
+.join-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.join-form button {
+    background-color: #000; /* Black Join Button */
+    color: #fff;
+    border: none;
+    padding: 0 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.join-form button:hover {
+    background-color: #333;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .newsletter-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .join-form {
+        width: 100%;
+    }
+}
+.insta-feed-section {
+    background-color: #000; /* Pure black background */
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* Instagram Header Styling */
+.insta-header {
+    padding: 0 5% 20px 5%;
+}
+
+.insta-header a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.insta-header i {
+    color: #fff;
+    font-size: 28px; /* The small icon */
+}
+
+.insta-header span {
+    color: #d9534f; /* Second Cup Red handle text */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* The Grid (4 Columns) */
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 5px; /* Small space between posts */
+    width: 100%;
+}
+
+.insta-item {
+    aspect-ratio: 1 / 1; /* Makes every box a perfect square */
+    overflow: hidden;
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the square without stretching */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect like a real feed */
+.insta-item img:hover {
+    transform: scale(1.05);
+    filter: brightness(80%);
+}
+
+/* Responsive adjustment for small screens */
+@media screen and (max-width: 768px) {
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
+    }
+}
+.insta-buttons-section {
+    background-color: #000; /* Black background to match the grid */
+    padding: 20px 0 60px 0; /* Small top padding, larger bottom padding before footer */
+    text-align: center;
+    width: 100%;
+}
+
+.insta-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Tight space between buttons */
+}
+
+.insta-outline-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #444; /* Subtle border color */
+    border-radius: 2px; /* Sharper corners to match the site */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.insta-outline-btn:hover {
+    background-color: #d9534f; /* Second Cup Red */
+    border-color: #d9534f;
+    color: #fff;
+}
+
+/* Mobile: Stack them so they don't get squished */
+@media screen and (max-width: 600px) {
+    .insta-button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .insta-outline-btn {
+        width: 70%;
+    }
+}
+/* Updated Floating Red Tab */
+.order-now-tab {
+    background-color: #d9534f;
+    color: white;
+    padding: 20px 12px;
+    
+    /* Change to fixed to keep it on screen while scrolling */
+    position: fixed; 
+    right: 0;
+    top: 50%; /* Positions it in the middle of the screen height */
+    transform: translateY(-50%); /* Perfectly centers it vertically */
+    
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: 9999; /* Ensures it stays above images, maps, and sliders */
+    border-radius: 5px 0 0 5px; /* Optional: rounds the left corners slightly */
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.order-now-tab:hover {
+    background-color: #c9302c;
+}
+
+/* Update your Mobile Media Query */
+@media screen and (max-width: 768px) {
+    /* Keep it visible or hide it on mobile as per your preference */
+    .order-now-tab {
+        padding: 15px 8px;
+        font-size: 12px;
+        top: 60%; /* Move it down slightly on mobile if it blocks menu icons */
+    }
+}
+
+/* --- 1. Desktop Styles (Normal View) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #e5e5e5;
+    position: relative;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Space between logo and menu */
+}
+
+.logo img { width: 70px; }
+
+.menu {
+    display: flex; /* Show menu horizontally on desktop */
+    list-style: none;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.hamburger {
+    display: none !important; /* FORCED HIDDEN ON DESKTOP */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.desktop-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+}
+
+/* --- 2. Zoomed/Mobile View (Breakpoints) --- */
+/* When zoomed to 150%, the effective width usually drops below 1000px */
+@media screen and (max-width: 1000px) {
+    .menu {
+        display: none; /* Hide the horizontal bar links */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #e5e5e5;
+        z-index: 1000;
+    }
+
+    /* Shown only when Hamburger is clicked */
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .hamburger {
+        display: block !important; /* ONLY SHOWS WHEN SCREEN IS SMALL/ZOOMED */
+    }
+
+    .desktop-icons {
+        display: none; /* Hide social icons to make room for hamburger */
+    }
+}
