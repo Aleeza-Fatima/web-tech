@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f6f9; }
+        .form-container { background: white; padding: 30px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        .btn-submit { background: #007bff; color: white; border: none; padding: 10px 15px; width: 100%; border-radius: 4px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Modify Product: <%= product.name %></h2>
+        <form action="/admin/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" name="name" value="<%= product.name %>" required>
+            </div>
+            <div class="form-group">
+                <label>Price (Cents)</label>
+                <input type="number" name="price" value="<%= product.price %>" required>
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <select name="category" required>
+                    <option value="Hot Drinks" <%= product.category === 'Hot Drinks' ? 'selected' : '' %>>Hot Drinks</option>
+                    <option value="Cold Drinks" <%= product.category === 'Cold Drinks' ? 'selected' : '' %>>Cold Drinks</option>
+                    <option value="Pastries" <%= product.category === 'Pastries' ? 'selected' : '' %>>Pastries</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Stock Quantity</label>
+                <input type="number" name="stock" value="<%= product.stock %>" required>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" rows="3"><%= product.description %></textarea>
+            </div>
+            <div class="form-group">
+                <label>Replace Product Image (Optional)</label>
+                <input type="file" name="image" accept="image/*">
+                <p><small>Current path: <%= product.image %></small></p>
+            </div>
+            <button type="submit" class="btn-submit">Save System Changes</button>
+        </form>
+    </div>
+
+</body>
+</html>
