@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Cup Premium Store Manager</title>
+    <style>
+        :root {
+            --primary: #4a3728;   /* Coffee Brown */
+            --accent: #d4a373;    /* Latte Gold */
+            --bg: #f4f6f8;
+            --white: #ffffff;
+            --text: #333333;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        /* Consistent Header Bar */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+        }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        nav a:hover { color: var(--accent); }
+        .main-content { padding: 30px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>☕ Second Cup Corporate</h1>
+        <nav>
+            <a href="/sales">Dashboard</a>
+            <a href="/show-products">Inventory</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <%- body %>
+    </div>
+
+</body>
+</html>
