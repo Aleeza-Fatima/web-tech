@@ -74,7 +74,6 @@ app.get('/products', async (req, res) => {
                                       .limit(limit);
 
         // 3. RENDER THE EJS TEMPLATE
-        // Send all data, filters, and page counts to your views file
         res.render('products', {
             products,
             currentPage: page,
